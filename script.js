@@ -1,12 +1,21 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    // --- Hamburger Menu Toggle ---
+    const menuIcon = document.querySelector('#menu-icon');
+    const navbar = document.querySelector('.navbar');
+
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle('fa-xmark');
+        navbar.classList.toggle('active');
+    };
+
     // --- Sticky Navbar on Scroll ---
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         header.classList.toggle('sticky', window.scrollY > 100);
     });
 
-    // --- Navbar Active Link on Scroll ---
+    // --- Navbar Active Link on Scroll & Close Menu on Link Click ---
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('header nav a');
 
@@ -24,7 +33,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
             }
         });
+
+        // Close menu when scrolling
+        menuIcon.classList.remove('fa-xmark');
+        navbar.classList.remove('active');
     };
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Close menu when a link is clicked
+            menuIcon.classList.remove('fa-xmark');
+            navbar.classList.remove('active');
+        });
+    });
 
     // --- Typing Text Animation ---
     if (typeof Typed !== 'undefined') {
