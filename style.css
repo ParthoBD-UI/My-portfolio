@@ -106,6 +106,12 @@ section {
     color: var(--main-color);
 }
 
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
 /* Home Section */
 .home {
     display: flex;
@@ -215,6 +221,8 @@ span.typing-text {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: auto;
+    padding: 4rem 9% 8rem;
 }
 
 .education-container {
@@ -222,7 +230,7 @@ span.typing-text {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .education-box {
@@ -264,6 +272,8 @@ span.typing-text {
 /* Skills Section */
 .skills {
     background: var(--second-bg-color);
+    min-height: auto; /* Added to reduce height */
+    padding: 4rem 9% 8rem; /* Custom padding */
 }
 
 .skills-slider {
@@ -425,17 +435,11 @@ span.typing-text {
 /* Footer */
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     padding: 2rem 9%;
     background: var(--second-bg-color);
-}
-
-.footer-text {
-    width: 100%;
-    text-align: center;
-    padding-right: 4rem; /* Space for the button */
+    position: relative;
 }
 
 .footer-text p {
@@ -474,12 +478,38 @@ span.typing-text {
 @media (max-width: 991px) {
     .header { padding: 2rem 3%; }
     section { padding: 7rem 3% 2rem; } /* Reduced responsive padding */
-    .contact { padding: 4rem 3% 8rem; }
+    .education, .skills, .contact { padding-top: 4rem; padding-bottom: 8rem; }
     .footer { padding: 2rem 3%; }
     .footer-iconTop { right: 3%; }
 }
 
 @media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
     .home { flex-direction: column; text-align: center;}
     .home-content h1 { font-size: 4.8rem; } /* Adjusted for smaller screens */
     .home-content h3 { font-size: 2.8rem; } /* Adjusted for smaller screens */
@@ -490,9 +520,8 @@ span.typing-text {
     .contact-wrapper { flex-direction: column; }
     .contact form .input-box input { width: 100%; }
     .contact-details { border-left: none; padding-left: 0; align-items: center; }
-    .footer { flex-direction: column-reverse; gap: 2rem; }
-    .footer-text { padding-right: 0; }
-    .footer-iconTop { position: static; }
+    .footer { justify-content: center; }
+    .footer-text { text-align: center; }
 }
 
 /* For ScrollReveal.js, elements are initially hidden */
