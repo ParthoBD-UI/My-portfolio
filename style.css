@@ -503,12 +503,10 @@ span.typing-text {
     }
     
     section {
-        min-height: auto;
-        padding: 8rem 3% 6rem;
+        padding: 10rem 3% 6rem; /* Increased top padding for mobile */
     }
 
     .home {
-        padding-top: 0;
         flex-direction: column; 
         text-align: center;
     }
