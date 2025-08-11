@@ -33,7 +33,7 @@ body {
 
 section {
     min-height: 100vh;
-    padding: 7rem 9% 2rem;
+    padding: 10rem 9% 2rem;
 }
 
 .heading {
@@ -470,7 +470,7 @@ span.typing-text {
 
 @media (max-width: 991px) {
     .header { padding: 2rem 3%; }
-    section { padding: 7rem 3% 2rem; }
+    section { padding: 10rem 3% 2rem; }
     .footer { padding: 2rem 3%; }
     .footer-iconTop { right: 3%; }
 }
@@ -503,10 +503,12 @@ span.typing-text {
     }
     
     section {
-        padding: 10rem 3% 6rem; /* Increased top padding for mobile */
+        min-height: auto;
+        padding: 8rem 3% 6rem;
     }
-
+    
     .home {
+        padding-top: 6rem; /* Added padding to push content down */
         flex-direction: column; 
         text-align: center;
     }
