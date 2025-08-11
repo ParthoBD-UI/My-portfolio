@@ -15,23 +15,25 @@
     --second-bg-color: #1F2937;
     --text-color: #F9FAFB;
     --main-color: #10B981; /* A vibrant green */
-    --accent-color: #8b5cf6; /* A new violet color */
+    --accent-color: #8b5cf6; /* A violet color for logo */
+    --name-grad-start: #f472b6; /* Lighter Pink */
+    --name-grad-end: #ec4899;   /* Deeper Pink */
 }
 
-html,
-body {
+html {
     font-size: 62.5%;
-    overflow-x: hidden; /* Prevents horizontal scrolling and zoom issues */
+    overflow-x: hidden;
 }
 
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 section {
     min-height: 100vh;
-    padding: 15rem 9% 2rem; 
+    padding: 7rem 9% 2rem;
 }
 
 .heading {
@@ -87,7 +89,6 @@ section {
     font-size: 2.5rem;
     font-weight: 700;
     cursor: default;
-    /* New Gradient Color */
     background: linear-gradient(45deg, var(--main-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -105,6 +106,12 @@ section {
     color: var(--main-color);
 }
 
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
 /* Home Section */
 .home {
     display: flex;
@@ -114,7 +121,7 @@ section {
 }
 
 .home-content h3 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 700;
 }
 
@@ -127,11 +134,10 @@ span.typing-text {
 }
 
 .home-content h1 {
-    font-size: 5.6rem;
+    font-size: 5.2rem;
     font-weight: 700;
     line-height: 1.3;
-    /* New Gradient Color for the main name */
-    background: linear-gradient(45deg, var(--text-color), var(--accent-color));
+    background: linear-gradient(45deg, var(--name-grad-start), var(--name-grad-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -141,7 +147,7 @@ span.typing-text {
 }
 
 .home-img img {
-    width: 35vw;
+    width: 30vw;
     border-radius: 50%;
     animation: floatImage 4s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
 }
@@ -294,7 +300,7 @@ span.typing-text {
 
 .skills-container {
     display: flex;
-    width: calc(32rem * 20); /* (width + margin) * number of boxes */
+    width: calc(32rem * 20);
     animation: slideSkills 40s linear infinite;
 }
 
@@ -304,7 +310,7 @@ span.typing-text {
 
 @keyframes slideSkills {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-32rem * 10)); } /* (width + margin) * original number of boxes */
+    100% { transform: translateX(calc(-32rem * 10)); }
 }
 
 .skill-box {
@@ -332,14 +338,12 @@ span.typing-text {
 /* Contact Section */
 .contact {
     background: var(--bg-color);
-    min-height: auto; /* Override to bring section up */
-    padding: 4rem 9% 10rem; /* Further reduced top padding */
 }
 
 .contact-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center; /* Align items to the center vertically */
+    align-items: center;
     gap: 5rem;
     flex-wrap: wrap;
 }
@@ -385,7 +389,7 @@ span.typing-text {
 
 .contact form .btn {
     margin-top: 2rem;
-    align-self: center; /* Centers the button */
+    align-self: center;
 }
 
 .contact-details {
@@ -395,8 +399,8 @@ span.typing-text {
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    padding-left: 5rem; /* Space for the vertical line */
-    border-left: .2rem solid var(--second-bg-color); /* The vertical line */
+    padding-left: 5rem;
+    border-left: .2rem solid var(--second-bg-color);
 }
 
 .detail-item {
@@ -424,17 +428,11 @@ span.typing-text {
 /* Footer */
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     padding: 2rem 9%;
     background: var(--second-bg-color);
-}
-
-.footer-text {
-    width: 100%;
-    text-align: center;
-    padding-right: 4rem; /* Space for the button */
+    position: relative;
 }
 
 .footer-text p {
@@ -472,25 +470,59 @@ span.typing-text {
 
 @media (max-width: 991px) {
     .header { padding: 2rem 3%; }
-    section { padding: 15rem 3% 2rem; }
-    .contact { padding: 4rem 3% 8rem; }
+    section { padding: 7rem 3% 2rem; }
     .footer { padding: 2rem 3%; }
     .footer-iconTop { right: 3%; }
 }
 
 @media (max-width: 768px) {
-    .home { flex-direction: column; text-align: center;}
-    .home-content h1 { font-size: 5rem; }
-    .home-img img { width: 70vw; margin-top: 4rem; }
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    
+    section {
+        min-height: auto;
+        padding: 8rem 3% 6rem;
+    }
+
+    .home {
+        padding-top: 0;
+        flex-direction: column; 
+        text-align: center;
+    }
+    .home-content h1 { font-size: 4.8rem; }
+    .home-content h3 { font-size: 2.8rem; }
+    .home-img img { width: 60vw; margin-top: 4rem; }
     .about { flex-direction: column-reverse; text-align: center;}
     .about-content h2 { text-align: center; }
     .about-img img { width: 70vw; margin-top: 4rem; }
     .contact-wrapper { flex-direction: column; }
     .contact form .input-box input { width: 100%; }
     .contact-details { border-left: none; padding-left: 0; align-items: center; }
-    .footer { flex-direction: column-reverse; gap: 2rem; }
-    .footer-text { padding-right: 0; }
-    .footer-iconTop { position: static; }
+    .footer { justify-content: center; }
+    .footer-text { text-align: center; }
 }
 
 /* For ScrollReveal.js, elements are initially hidden */
