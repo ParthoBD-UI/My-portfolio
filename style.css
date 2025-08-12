@@ -422,7 +422,7 @@ span.typing-text {
 
 .detail-item {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 1.5rem;
 }
 
@@ -568,3 +568,4 @@ span.typing-text {
 .contact .heading, .contact-wrapper {
     visibility: hidden;
 }
+
