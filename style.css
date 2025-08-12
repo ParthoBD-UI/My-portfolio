@@ -538,15 +538,6 @@ span.typing-text {
         margin: 3rem 0;
     }
     
-    section {
-        min-height: auto;
-        padding: 10rem 3% 6rem;
-    }
-    
-    .home {
-        min-height: calc(100vh - 16rem);
-    }
-
     .home-content h1 { font-size: 4.8rem; }
     .home-content h3 { font-size: 2.8rem; }
     .home-img img { width: 200px; height: 200px; }
@@ -555,7 +546,18 @@ span.typing-text {
     .about-img img { width: 70vw; margin-top: 4rem; }
     .contact-wrapper { flex-direction: column; }
     .contact form .input-box input { width: 100%; }
-    .contact-details { border-left: none; padding-left: 0; align-items: flex-start; }
+    
+    /* --- এই অংশটি পরিবর্তন করুন --- */
+    .contact-details {
+        border-left: none;
+        padding: 4rem 2rem; /* এখানে প্যাডিং পরিবর্তন করা হয়েছে */
+        align-items: center;
+        width: 100%;
+        background: var(--second-bg-color);
+        border-radius: .8rem;
+    }
+    /* ------------------------------ */
+
     .footer { justify-content: center; }
     .footer-text { text-align: center; }
 }
@@ -568,6 +570,3 @@ span.typing-text {
 .contact .heading, .contact-wrapper {
     visibility: hidden;
 }
-
-
-
