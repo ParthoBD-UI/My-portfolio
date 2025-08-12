@@ -220,6 +220,8 @@ span.typing-text {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: auto;
+    padding-bottom: 10rem;
 }
 
 .education-container {
@@ -269,6 +271,8 @@ span.typing-text {
 /* Skills Section */
 .skills {
     background: var(--second-bg-color);
+    min-height: auto;
+    padding-bottom: 10rem;
 }
 
 .skills-slider {
@@ -338,6 +342,7 @@ span.typing-text {
 /* Contact Section */
 .contact {
     background: var(--bg-color);
+    min-height: auto;
 }
 
 .contact-wrapper {
@@ -503,12 +508,10 @@ span.typing-text {
     }
     
     section {
-        min-height: auto;
-        padding: 8rem 3% 6rem;
+        padding: 10rem 3% 6rem;
     }
     
     .home {
-        padding-top: 6rem; /* Added padding to push content down */
         flex-direction: column; 
         text-align: center;
     }
