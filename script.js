@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // --- Typing Text Animation ---
     if (typeof Typed !== 'undefined') {
         const typed = new Typed('.typing-text', {
-            strings: ['Digital Marketer', 'Frontend Developer'],
+            strings: ['Frontend Developer','UI/UX Designer','Digital Marketer'],
             typeSpeed: 100, // গতি কমানোর জন্য মান বাড়ানো হয়েছে
             backSpeed: 100, // গতি কমানোর জন্য মান বাড়ানো হয়েছে
             backDelay: 1000,
@@ -83,3 +83,4 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error('ScrollReveal.js library not found.');
     }
 });
+
