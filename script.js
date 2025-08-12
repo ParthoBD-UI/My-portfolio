@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // --- Typing Text Animation ---
     if (typeof Typed !== 'undefined') {
         const typed = new Typed('.typing-text', {
-            strings: ['Frontend Developer', 'UI/UX Designer', 'Digital Marketer', 'Content Writer'],
-            typeSpeed: 70,
-            backSpeed: 70,
+            strings: ['Digital Marketer', 'Frontend Developer'],
+            typeSpeed: 100, // গতি কমানোর জন্য মান বাড়ানো হয়েছে
+            backSpeed: 100, // গতি কমানোর জন্য মান বাড়ানো হয়েছে
             backDelay: 1000,
             loop: true
         });
