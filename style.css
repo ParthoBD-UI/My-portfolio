@@ -91,7 +91,7 @@ section {
     cursor: default;
 }
 .logo img {
-    height: 35px; /* আপনার লোগোর উচ্চতা প্রয়োজন অনুযায়ী পরিবর্তন করুন */
+    height: 33px; /* আপনার লোগোর উচ্চতা প্রয়োজন অনুযায়ী পরিবর্তন করুন */
     width: auto;
     vertical-align: middle;
 }
@@ -583,6 +583,7 @@ span.typing-text {
 .contact .heading, .contact-wrapper {
     visibility: hidden;
 }
+
 
 
 
