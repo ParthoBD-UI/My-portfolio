@@ -13,7 +13,7 @@ You can view the live version of my portfolio here:
 
 ### 🖼️ Preview
 
-![My Portfolio Screenshot](.screenshot.png)
+![My Portfolio Screenshot](screenshot.png)
 
 ---
 
